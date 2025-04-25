@@ -1,5 +1,7 @@
 import React from "react"
 // import {createStateVariable} from "./helper.js"
+import MB from "./editor/MB.js"
+
 
 class App extends React.Component {
 
@@ -10,17 +12,14 @@ class App extends React.Component {
 		}
 	}
 	render() {
-		return React.createElement(
-			"ul", {
-				// className: JSON.stringify(this.props)
-			},
-			<p>currentToolIndex: {this.state.currentToolIndex}</p>,
-			... this.props.toolsConfig.map((x, index)=>{
-				return <button onClick={()=>{
+		return (<ul>
+			{this.props.toolsConfig.map((x, index)=>{
+				return <button key={index} onClick={()=>{
 					this.setState({currentToolIndex: index})
 				}}>{x.name} {index}</button>
-			})
-		);
+			})}
+			{React.createElement(this.props.toolsConfig[this.state.currentToolIndex].editor, null, null)}
+		</ul>)
 	}
 };
 
