@@ -1,4 +1,5 @@
 import React from "react"
+import viewActionHandler from "./view-aciton-handler.js"
 
 export default class ToolsMenu extends React.Component {
   constructor(props) {
@@ -19,14 +20,14 @@ export default class ToolsMenu extends React.Component {
                 this.props.toolsConfig.map((item, index)=>{
                   return (
                     <li className="nav-item" key={index}>
-                      <a className="nav-link" href="#">{item.name}</a>
+                      <a className="nav-link" onClick={()=>{viewActionHandler.onClickToolsMenu(index)}}>{item.name}</a>
                     </li>
                   )
                 })
               }
             </ul>
           </div>
-      </div>
+        </div>
       </nav>
     )
   }
