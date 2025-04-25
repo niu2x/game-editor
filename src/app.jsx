@@ -17,10 +17,14 @@ class App extends React.Component {
     return (
       <div className="container">
         <ToolsMenu toolsConfig={this.props.toolsConfig}/>
-        { 
-          (this.state.currentToolIndex >= 0) &&
-            React.createElement(this.props.toolsConfig[this.state.currentToolIndex].editor, null, null) 
-        }
+        <div className='row'>
+          <div className='col'>
+          { 
+            (this.state.currentToolIndex >= 0) &&
+              React.createElement(this.props.toolsConfig[this.state.currentToolIndex].editor, null, null) 
+          }
+          </div>
+        </div>
       </div>
     );
   }
