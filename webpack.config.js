@@ -30,12 +30,20 @@ const config = {
   ],
   module: {
     rules: [{
-      test: /\.jsx?$/, // 匹配 .js 和 .jsx 文件
-      include: /\/src\//, // 排除 node_modules 目录
-      use: {
-        loader: 'babel-loader', // 使用 babel-loader 处理 JSX
+        test: /\.jsx?$/, // 匹配 .js 和 .jsx 文件
+        include: /\/src\//, // 排除 node_modules 目录
+        use: {
+          loader: 'babel-loader', // 使用 babel-loader 处理 JSX
+        },
       },
-    }, ],
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader'],
+      }, {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader'],
+      },
+    ],
   },
   // resolve: {
   //   extensions: ['.js', '.jsx'], // 自动解析 .js 和 .jsx 文件
