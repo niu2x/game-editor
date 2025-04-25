@@ -1,6 +1,5 @@
 import React from "react"
 // import {createStateVariable} from "./helper.js"
-import MB from "./editor/MB.js"
 import ToolsMenu from "./tools-menu.jsx"
 import viewActionHandler from "./view-aciton-handler.js"
 
