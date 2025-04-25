@@ -3,10 +3,15 @@ import React from "react"
 export default class MB extends React.Component {
   render() {
     return (
-      <div class="form-floating">
-        <textarea class="form-control" placeholder="Leave a comment here"></textarea>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </div>
+      <>
+        <div className="form-floating">
+          <textarea className="form-control" placeholder="Leave a comment here"></textarea>
+          <button type="submit" className="btn btn-primary" onClick={()=>{this.onClickSubmit()}}>Submit</button>
+        </div>
+      </>
     )
+  }
+
+  onClickSubmit() {
   }
 }
